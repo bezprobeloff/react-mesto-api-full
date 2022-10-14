@@ -17,7 +17,6 @@ import Register from './Register';
 import InfoTooltip from './InfoTooltip';
 import ProtectedRoute from './ProtectedRoute';
 import { useHistory } from 'react-router-dom';
-import Popup from './Popup';
 
 const App = () => {
   const [isEditProfilePopupOpen, setIsEditProfilePopupOpen] = useState(false);
@@ -58,7 +57,7 @@ const App = () => {
     const token = localStorage.getItem('token');
 
     if (token) {
-      tokenCheck(token);
+      checkToken(token);
     } else {
       setIsTokenChecked(true);
     }
@@ -94,8 +93,8 @@ const App = () => {
     return mestoAuth
       .authorize({ email, password })
       .then((data) => {
-        setCurrentUser({ ...currentUser, isLoggedIn: true });
         localStorage.setItem('token', data.token);
+        setCurrentUser({ ...currentUser, isLoggedIn: true });
       })
       .catch((res) => {
         res.then((data) => {
@@ -116,7 +115,7 @@ const App = () => {
   };
 
   // проверяем наличие токена, если все хорошо сразу логинимся
-  const tokenCheck = async (token) => {
+  const checkToken = async (token) => {
     mestoAuth
       .getContent(token)
       .then((res) => {
@@ -124,7 +123,7 @@ const App = () => {
           setCurrentUser({
             ...currentUser,
             isLoggedIn: true,
-            email: res.data.email,
+            ...res,
           });
         }
       })
@@ -155,7 +154,7 @@ const App = () => {
   };
 
   const handleCardLike = (card) => {
-    const isLiked = card.likes.some((like) => like._id === currentUser._id);
+    const isLiked = card.likes.some((like) => like === currentUser._id);
 
     api
       .changeLikeCardStatus(card._id, !isLiked)
@@ -249,44 +248,38 @@ const App = () => {
           </Route>
         </Switch>
         <Footer />
-        <Popup
-          component={InfoTooltip}
+        <InfoTooltip
           name='infoTooltip'
           isSuccess={infoTooltipProps.isSuccess}
           message={infoTooltipProps.message}
           isOpen={isInfoTooltipOpen}
           onClose={closeAllPopups}
         />
-        <Popup
-          component={EditProfilePopup}
+        <EditProfilePopup
           name='edit-profile'
           isOpen={isEditProfilePopupOpen}
           onUpdateUser={handleUpdateUser}
           onClose={closeAllPopups}
         />
-        <Popup
-          component={EditAvatarPopup}
+        <EditAvatarPopup
           name='update-avatar'
           isOpen={isEditAvatarPopupOpen}
           onUpdateAvatar={handleUpdateAvatar}
           onClose={closeAllPopups}
         />
-        <Popup
-          component={AddPlacePopup}
+        <AddPlacePopup
           name='add-card'
           isOpen={isAddPlacePopupOpen}
           onAddPlace={handleAddPlace}
           onClose={closeAllPopups}
         />
-        <Popup
-          component={ConfirmationPopup}
+        <ConfirmationPopup
           name='confirmation'
           isOpen={isConfirmationPopupOpen}
           onSubmit={handleCardDelete}
           onClose={closeAllPopups}
         />
-        <Popup
-          component={ImagePopup}
+        <ImagePopup
           name='view-image'
           card={selectedCard}
           isOpen={isImagePopupOpen}
