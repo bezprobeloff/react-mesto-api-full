@@ -18,10 +18,13 @@ https://user-images.githubusercontent.com/44836223/196674135-e667402e-daad-4424-
 
 Синхронизируем данные по api - https://api.mesto.bezprobeloff.nomoredomains.icu/ . 
 
-Исходный код бекенда и документация API на GitHub -  **[Mesto Russia (Backend)](https://github.com/bezprobeloff/express-mesto-gha/)**
-
+Исходный код бекенда и документация API на GitHub -  **[Mesto Russia (Backend)](https://github.com/bezprobeloff/react-mesto-api-full/tree/main/backend)**
 
 Можем обмениваться информацией с сервером по REST API: добавить и удалить (только свою) карточку с подтверждением, поставить/снять лайк, обновление данных пользователя (имя, аватарка), авторизация/регистрация.
+
+**История разработки**
+
+Ссылка на историю разработки - https://github.com/bezprobeloff/react-mesto-auth
 
 **Технологии**
 
