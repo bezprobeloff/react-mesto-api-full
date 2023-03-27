@@ -5,8 +5,6 @@
     <img alt="Made by: Bezprobeloff" src="https://img.shields.io/badge/made%20by-Bezprobeloff-blue" />
 </p>
 
-Ссылка на deploy __Mesto Russia__: https://mesto.bezprobeloff.nomoredomains.icu/
-
 https://user-images.githubusercontent.com/44836223/196674135-e667402e-daad-4424-a7fc-a67873e0be99.mp4
 
 **Обзор**
@@ -15,8 +13,6 @@ https://user-images.githubusercontent.com/44836223/196674135-e667402e-daad-4424-
 На каждом устройстве сайт адаптивно меняется для удобства и читабельности.
 
 Данный проект является продолжением __Mesto Russia__ - https://github.com/bezprobeloff/mesto-react, но с дополнительным функционалом авторизации.
-
-Синхронизируем данные по api - https://api.mesto.bezprobeloff.nomoredomains.icu/ . 
 
 Исходный код бекенда и документация API на GitHub -  **[Mesto Russia (Backend)](https://github.com/bezprobeloff/react-mesto-api-full/tree/main/backend)**
 
