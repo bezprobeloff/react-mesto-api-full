@@ -1,6 +1,5 @@
 <h1 align="center">Проект Mesto Russia</h1>
 
-Ссылка на деплой проекта — https://mesto.bezprobeloff.nomoredomains.icu/
 
 ## Обзор
 
