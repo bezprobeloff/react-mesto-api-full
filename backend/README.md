@@ -8,9 +8,8 @@
 
 ## Обзор
 
-Проект бекенд для сайта Mesto Russia https://mesto.bezprobeloff.nomoredomains.icu/  
+Проект бекенд для сайта Mesto Russia
 Исходный код фронтенда  на GitHub -  **[Mesto Russia (frontend)](https://github.com/bezprobeloff/react-mesto-api-full/tree/main/frontend)**  
-Ссылка на __API__ - https://api.mesto.bezprobeloff.nomoredomains.icu/  
 
 ## История разработки
 
